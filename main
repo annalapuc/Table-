@@ -1,0 +1,75 @@
+import java.util.Random;
+public class Main {
+
+    public static void main(String[] args) {
+
+        System.out.println("Program tworzy tablice ");
+        Random rand=new Random();
+        int []table= new int[10];
+
+        // uzupelnienie tablicy
+        System.out.print("Wylosowane liczby to: ");
+        int average=0;
+        for (int i=0; i<10; i++)
+        {
+            table[i]=rand.nextInt(21)-10;
+            System.out.print(" "+table[i]);
+            average+=table[i];
+
+        }
+        // najmniejszy i najwiekszy element
+
+        System.out.println();
+        int wynik=table[0];
+        for(int i=1; i<10; i++) // max
+        {
+            if (wynik>table[i])
+            {
+               wynik=table[i];
+            }}
+        System.out.println("Min to: "+wynik);
+
+        wynik=table[0];
+        for (int i=1; i<10; i++) // max
+        {
+            if (wynik<table[i])
+            {
+                wynik=table[i];
+            }
+        }
+        System.out.println("Max to: "+wynik);
+
+        // srednia arytmetyczna
+        float av=(float)average/10;
+        System.out.println("Srednia arytmetyczna to: "+av);
+
+        //ile elementow wiekszych / ile mniejszych od sredniej
+        int counterMAX=0;
+        int counterMIN=0;
+        for(int i=0;i<10;i++)
+        {
+            if (table[i] > av) {
+                counterMAX++;
+            }
+            else if (table[i] < av) {
+                counterMIN++;
+            }
+        }
+
+        System.out.println("Większych od średniej: "+counterMAX);
+        System.out.println("Mniejszych od średniej: "+counterMIN);
+
+
+        // wyswietlanie zawartości tablicy od tyłu
+
+        int []reverse=new int[10];
+        int j=9;
+        for (int k=0; k<=10; k++)
+        {
+            reverse[k]=table[j];
+            System.out.print(reverse[k]+" ");
+            j--;
+        }
+
+    }
+}
